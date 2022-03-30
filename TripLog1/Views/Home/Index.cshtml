@@ -1,0 +1,51 @@
+﻿@model List<Trip>
+@{ 
+   ViewBag.Title = "My Trip Log";
+
+}
+
+    <div class="container">    
+
+        <a asp-controller="Add" asp-action="AddTrip" ><b>Add Trip</b></a>
+
+        <div class="row">
+            <div class="col-sm-8">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Accommodations</th>
+                            <th>Things To Do</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        @foreach (Trip addTrip in Model)
+                         {
+                            <tr>
+                                <td>@addTrip.Destination</td>
+                                <td>@addTrip.StartDate</td>
+                                <td>@addTrip.EndDate</td>
+                                <td>@addTrip.Accommodations <br />Phone: @addTrip.Phone | @addTrip.Email </td>
+                                <td>@addTrip.Things<br /> @addTrip.Things1<br /> @addTrip.Things2</td>
+                                    
+                               
+                                                                                              
+                            </tr>
+
+                    
+                         }
+           
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
